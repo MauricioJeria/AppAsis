@@ -53,10 +53,7 @@ export class AuthService {
   async registrouser(nombreCompleto: string, rut: string, usuario: string, clave: string, rol: string, email: string): Promise<void> {
     const url = 'https://6711db204eca2acdb5f5f551.mockapi.io/usuarios';
 
-    if(!nombreCompleto ||!rut ||!usuario ||!clave ||!rol ||!email) {
-      this.mensajeError = 'TODOS LOS CAMPOS SON OBLIGATORIOS.  ';
-      return;
-    }
+
 
     try {
     const usuarioExistente = await this.revUserExistente(usuario);

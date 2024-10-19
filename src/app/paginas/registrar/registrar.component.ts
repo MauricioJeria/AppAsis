@@ -24,7 +24,7 @@ import { FooterComponent } from 'src/app/compartidos/footer/footer.component';
 })
 export class RegistrarComponent  {
 
-  nombreComplet: string = '';
+  nombreCompleto: string = '';
   rut: string = '';
   usuario: string = '';
   clave: string = '';
@@ -39,7 +39,17 @@ export class RegistrarComponent  {
     private router: Router,
     private http: HttpClient
   ) { }
-  async registrouser() {
+  yatienescuenta(){
+    this.router.navigate(['/iniciosesion']);
+  }
+  async registrouser(nombreCompleto: string, rut: string,
+    usuario: string, clave: string, rol:string, email: string) {
+
+    if (!nombreCompleto || !rut || !usuario || !clave || !rol || !email) {
+      await this.alerta('Error', 'Todos los campos son obgligatorios.');
+      return;
+  }
+
     this.isLoading = true;
 
 
@@ -51,7 +61,7 @@ export class RegistrarComponent  {
         await this.alerta('Error', 'Este nombre de usuario ya está en uso. Prueba con otro.  ');
       } else {
 
-        await this.authService.registrouser(this.nombreComplet, this.rut, this.usuario,
+        await this.authService.registrouser(this.nombreCompleto, this.rut, this.usuario,
            this.clave, this.rol, this.email);
         this.isLoading = false;
 

@@ -33,8 +33,17 @@ export class IniciosesionComponent {
     this.router.navigate(['/registrar']);
   }
 
+  irARecuperar() {
+    this.router.navigate(['/recuperacion']);
+  }
+
 
   async iniciarSe(usuario: string, clave: string) {
+
+    if (!usuario || !clave) {
+      await this.alerta('Error', 'Por favor ingresa tu usuario y clave.');
+      return;
+  }
     this.isLoading = true;
     this.isLoggingOut = false;
 

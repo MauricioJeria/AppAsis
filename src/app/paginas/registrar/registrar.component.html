@@ -7,7 +7,7 @@
 
     <ion-item>
       <ion-label position="floating">Nombre Completo:</ion-label>
-      <ion-input [(ngModel)]="nombreComplet" type="text"></ion-input>
+      <ion-input [(ngModel)]="nombreCompleto" type="text"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -42,13 +42,16 @@
     </ion-item>
 
 
-    <ion-button (click)="registrouser()" class="custom-button" [disabled]="isLoading">
+    <ion-button (click)="registrouser(nombreCompleto,rut,usuario,clave,rol,
+      email)" class="custom-button" [disabled]="isLoading">
       Registrar
       <ion-spinner *ngIf="isLoading"></ion-spinner>
     </ion-button>
-    <p *ngIf="mensajeError" style="color: red;">{{ mensajeError }}</p>
 
-    <p class="inicio-sesion" routerLink="/iniciosesion">
+    <p *ngIf="mensajeError" style="color: orangered;">{{ mensajeError }}</p>
+
+
+    <p class="iniciar-sesion" (click)="yatienescuenta()">
       ¿Ya tienes cuenta? Inicia sesión
     </p>
   </div>
