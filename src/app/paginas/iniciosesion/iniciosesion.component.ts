@@ -28,7 +28,9 @@ export class IniciosesionComponent {
   private router = inject(Router);
   private alertController = inject(AlertController);
 
-
+  irARegistrar () {
+    this.router.navigate(['/registrar']);
+  }
 
 
   async iniciarSe(usuario: string, clave: string) {
@@ -56,7 +58,7 @@ export class IniciosesionComponent {
 
           if (usuarioCompleto) {
 
-            if (usuarioCompleto.rol === 'profesor') {
+            if (usuarioCompleto.rol === 'docente') {
               this.router.navigate(['/paginaprofesor']);
             } else {
               this.router.navigate(['/paginaestudiante']);

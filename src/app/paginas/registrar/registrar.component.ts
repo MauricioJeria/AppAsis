@@ -41,7 +41,7 @@ export class RegistrarComponent  {
   ) { }
   async registrouser() {
     this.isLoading = true;
-    this.router.navigate(['/registrar'])
+
 
     try {
 
