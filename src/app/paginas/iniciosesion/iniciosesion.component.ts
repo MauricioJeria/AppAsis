@@ -7,6 +7,7 @@ import { FooterComponent } from 'src/app/compartidos/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { switchMap } from 'rxjs/operators';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -16,7 +17,7 @@ import { switchMap } from 'rxjs/operators';
   styleUrls: ['./iniciosesion.component.scss'],
   standalone: true,
   imports: [IonicModule, HeaderComponent,FooterComponent,
-    FormsModule, CommonModule],
+    FormsModule, CommonModule, RouterModule]
 })
 export class IniciosesionComponent {
   usuario: string = '';

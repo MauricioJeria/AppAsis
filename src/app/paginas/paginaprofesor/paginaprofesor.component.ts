@@ -4,6 +4,7 @@ import { HeaderComponent } from 'src/app/compartidos/header/header.component';
 import { FooterComponent } from 'src/app/compartidos/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-paginaprofesor',
@@ -12,10 +13,8 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [
   IonicModule, HeaderComponent, FooterComponent,
-  FormsModule, CommonModule]
+  FormsModule, CommonModule, RouterModule]
 })
 export class PaginaprofesorComponent   {
-
-
 
 }

@@ -1,7 +1,49 @@
 <ion-content>
   <app-header></app-header>
-    <p>
-      paginaprofesor works!
-    </p>
+  <ion-grid class="curso-grid">
+    <ion-row>
+      <ion-col size="12" size-md="4">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Matemáticas - 2do Año</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button expand="block" [routerLink]="['/qrgenerate']">
+              <ion-icon name="scan-outline" slot="start"></ion-icon>
+              generar qr
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="12" size-md="4">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Física - 3er Año</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button expand="block" [routerLink]="['/qrgenerate']">
+              <ion-icon name="scan-outline" slot="start"></ion-icon>
+              generar qr
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="12" size-md="4">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Ciencias - 1er Año</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button expand="block" [routerLink]="['/qrgenerate']">
+              <ion-icon name="scan-outline" slot="start"></ion-icon>
+              generar qr
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   <app-footer></app-footer>
 </ion-content>
