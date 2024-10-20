@@ -1,0 +1,52 @@
+$color-blanco: #ffffff;
+$color-granate: #9b1b30; // Granate suave
+$color-texto: #333333; // Gris oscuro
+
+$border-radius: 8px;
+$transition-duration: 0.3s;
+
+ion-content {
+  background-color: $color-blanco;
+  font-family: 'Roboto', sans-serif; // Asegúrate de incluir esta fuente en tu proyecto
+
+  .custom-card {
+    background-color: $color-blanco;
+    border-radius: $border-radius;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    margin: 20px;
+
+    .logo-container {
+      margin-bottom: 20px;
+    }
+
+    .scanner-container {
+      margin: 20px 0;
+    }
+
+    p {
+      color: $color-texto;
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+
+      .custom-button {
+        background-color: $color-granate;
+        color: $color-blanco;
+        border-radius: $border-radius;
+        transition: all $transition-duration;
+
+        &:hover {
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}
