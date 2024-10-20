@@ -1,51 +1,47 @@
-/* iniciosesion.component.scss */
+.custom-card {
+  padding: 20px;
 
-:host {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f4f4f9 !important; /* Aumenta la prioridad */
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .button_slide {
+    color: #FFF;
+    border: 2px solid rgb(216, 2, 134);
+    border-radius: 0px;
+    padding: 18px 36px;
+    display: block;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #D80286;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+    margin: 10px 0;
+    text-align: center;
+
+    &.slide_left:hover {
+      box-shadow: inset 0 0 0 50px #D80286;
+    }
+
+    &.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  .recuperar {
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+    color: #D80286;
+  }
 }
 
-.login-container {
-  background: #fff !important;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
-  text-align: center;
-}
-
-.login-input ion-input {
-  border: 1px solid #ccc !important;
-  border-radius: 8px;
-  padding: 0.5rem;
-}
-
-.login-button {
-  margin-top: 1.5rem;
-  width: 100%;
-  background-color: #3880ff !important;
-  color: white !important;
-  padding: 0.75rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.login-button:disabled {
-  background-color: #aaa !important;
-}
-
-.links .link {
-  color: #3880ff !important;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-.links .link:hover {
-  color: #0056b3 !important;
+ion-spinner {
+  vertical-align: middle;
+  margin-left: 10px;
 }

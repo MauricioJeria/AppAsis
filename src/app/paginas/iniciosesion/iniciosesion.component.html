@@ -14,12 +14,14 @@
       <ion-input [(ngModel)]="clave" type="password"></ion-input>
     </ion-item>
 
-    <ion-button (click)="iniciarSe(usuario, clave)" class="custom-button" [disabled]="isLoading">
+    <div class="button_slide slide_left" (click)="iniciarSe(usuario, clave)" [class.disabled]="isLoading">
       Iniciar Sesion
       <ion-spinner *ngIf="isLoading"></ion-spinner>
-    </ion-button>
+    </div>
 
-    <ion-button (click)="irARegistrar()" class="custom-button">Registrarse</ion-button>
+    <div class="button_slide slide_left" (click)="irARegistrar()">
+      Registrarse
+    </div>
 
     <p class="recuperar" (click)="irARecuperar()">
       ¿Olvidaste tu contraseña?
