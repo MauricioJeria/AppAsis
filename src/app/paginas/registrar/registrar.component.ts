@@ -65,13 +65,13 @@ export class RegistrarComponent  {
            this.clave, this.rol, this.email);
         this.isLoading = false;
 
-        await this.alerta('Muy bien', 'TE HAS REGISTRADO CON ÉXITO. Ahora puedes iniciar sesión.  ');
+        await this.alerta('Exito', 'Registro completo, ahora puedes iniciar sesion.  ');
 
         this.router.navigate(['/iniciosesion']);
       }
     } catch (error) {
       this.isLoading = false;
-      await this.alerta('ERROR', 'Ha ocurrido un error al registrar al usuario. Inténtalo más tarde.  ');
+      await this.alerta('ERROR', 'Al registrar usuario intentalo mas tarde.  ');
     }
   }
 
