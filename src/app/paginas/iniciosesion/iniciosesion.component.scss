@@ -1,30 +1,73 @@
+ion-content {
+  --background: #1D1D1D;
+}
+
 .custom-card {
   padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #1D1D1D;
+  border: 2px solid #2272FF;
+  border-radius: 8px;
 
   h2 {
     text-align: center;
+    margin-bottom: 30px;
+    color: #2272FF;
+    font-family: "Lucida Console", Monaco, monospace;
+    text-shadow: 0 0 10px rgba(34, 114, 255, 0.7);
+  }
+
+  .input-slide {
     margin-bottom: 20px;
+    position: relative;
+    border: 2px solid #2272FF;
+    padding: 10px;
+    transition: box-shadow 0.4s ease-out;
+    background-color: #1D1D1D;
+
+    &:focus-within {
+      box-shadow: inset 0 0 0 2px #2272FF;
+    }
+
+    ion-label {
+      color: #2272FF;
+      font-family: "Lucida Console", Monaco, monospace;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    ion-input {
+      --padding-start: 0;
+      --padding-end: 0;
+      font-family: "Lucida Console", Monaco, monospace;
+      --color: #2272FF;
+      --placeholder-color: rgba(34, 114, 255, 0.7);
+    }
   }
 
   .button_slide {
-    color: #FFF;
-    border: 2px solid rgb(216, 2, 134);
+    color: #1D1D1D;
+    border: 2px solid #2272FF;
     border-radius: 0px;
-    padding: 18px 36px;
-    display: block;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: "Lucida Console", Monaco, monospace;
     font-size: 14px;
     letter-spacing: 1px;
     cursor: pointer;
-    box-shadow: inset 0 0 0 0 #D80286;
-    -webkit-transition: ease-out 0.4s;
-    -moz-transition: ease-out 0.4s;
-    transition: ease-out 0.4s;
-    margin: 10px 0;
+    background-color: #2272FF;
+    box-shadow: inset 0 0 0 0 #1D1D1D, 0 0 10px rgba(34, 114, 255, 0.5);
+    -webkit-transition: all 0.4s ease-out;
+    -moz-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
     text-align: center;
 
-    &.slide_left:hover {
-      box-shadow: inset 0 0 0 50px #D80286;
+    &.slide_left:hover, &.slide_left:focus {
+      box-shadow: inset 400px 0 0 0 #1D1D1D;
+      color: #2272FF;
     }
 
     &.disabled {
@@ -37,11 +80,19 @@
     text-align: center;
     margin-top: 20px;
     cursor: pointer;
-    color: #D80286;
+    color: #2272FF;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 14px;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
   }
 }
 
 ion-spinner {
   vertical-align: middle;
   margin-left: 10px;
+  color: #2272FF;
 }

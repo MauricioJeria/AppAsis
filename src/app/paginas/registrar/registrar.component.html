@@ -1,61 +1,53 @@
 <ion-content>
   <app-header></app-header>
-
+<br><br>
   <div class="custom-card">
     <h2>Registrar Usuario Nuevo</h2>
 
-
-    <ion-item>
+    <div class="input-slide">
       <ion-label position="floating">Nombre Completo:</ion-label>
       <ion-input [(ngModel)]="nombreCompleto" type="text"></ion-input>
-    </ion-item>
+    </div>
 
-    <ion-item>
+    <div class="input-slide">
       <ion-label position="floating">Rut:</ion-label>
       <ion-input [(ngModel)]="rut" type="text"></ion-input>
-    </ion-item>
+    </div>
 
-
-    <ion-item>
+    <div class="input-slide">
       <ion-label position="floating">Usuario:</ion-label>
       <ion-input [(ngModel)]="usuario" type="text"></ion-input>
-    </ion-item>
+    </div>
 
-
-    <ion-item>
+    <div class="input-slide">
       <ion-label position="floating">Clave:</ion-label>
       <ion-input [(ngModel)]="clave" type="password"></ion-input>
-    </ion-item>
+    </div>
 
-
-    <ion-item>
+    <div class="input-slide">
       <ion-label>Rol:</ion-label>
       <ion-select [(ngModel)]="rol">
         <ion-select-option value="alumno">Alumno</ion-select-option>
         <ion-select-option value="docente">Profesor</ion-select-option>
       </ion-select>
-    </ion-item>
+    </div>
 
-    <ion-item>
+    <div class="input-slide">
       <ion-label position="floating">E-mail:</ion-label>
       <ion-input [(ngModel)]="email" type="text"></ion-input>
-    </ion-item>
+    </div>
 
-
-    <ion-button (click)="registrouser(nombreCompleto,rut,usuario,clave,rol,
-      email)" class="custom-button" [disabled]="isLoading">
+    <div class="button_slide slide_left" (click)="registrouser(nombreCompleto,rut,usuario,clave,rol,email)" [class.disabled]="isLoading">
       Registrar
       <ion-spinner *ngIf="isLoading"></ion-spinner>
-    </ion-button>
+    </div>
 
-    <p *ngIf="mensajeError" style="color: orangered;">{{ mensajeError }}</p>
-
+    <p *ngIf="mensajeError" class="error-message">{{ mensajeError }}</p>
 
     <p class="iniciar-sesion" (click)="yatienescuenta()">
       ¿Ya tienes cuenta? Inicia sesión
     </p>
   </div>
-
+<br><br>
   <app-footer></app-footer>
 </ion-content>
-

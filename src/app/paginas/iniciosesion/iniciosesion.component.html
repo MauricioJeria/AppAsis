@@ -1,18 +1,18 @@
 <ion-content>
   <app-header></app-header>
-
+<br><br>
   <div class="custom-card">
     <h2>Inicio de Sesión</h2>
 
-    <ion-item>
+    <div class="input-slide">
       <ion-label position="floating">Usuario</ion-label>
       <ion-input [(ngModel)]="usuario" type="text"></ion-input>
-    </ion-item>
+    </div>
 
-    <ion-item>
+    <div class="input-slide">
       <ion-label position="floating">Contraseña</ion-label>
       <ion-input [(ngModel)]="clave" type="password"></ion-input>
-    </ion-item>
+    </div>
 
     <div class="button_slide slide_left" (click)="iniciarSe(usuario, clave)" [class.disabled]="isLoading">
       Iniciar Sesion
@@ -27,6 +27,6 @@
       ¿Olvidaste tu contraseña?
     </p>
   </div>
-
+<br><br>
   <app-footer></app-footer>
 </ion-content>

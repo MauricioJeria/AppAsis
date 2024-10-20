@@ -1,49 +1,40 @@
 <ion-content>
   <app-header></app-header>
-  <ion-grid class="curso-grid">
-    <ion-row>
-      <ion-col size="12" size-md="4">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>Anatomia                Seccion 101</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-button expand="block" [routerLink]="['/qrgenerate']">
+  <div class="custom-container">
+    <h2>Secciones de Anatomía</h2>
+    <ion-grid class="curso-grid">
+      <ion-row>
+        <ion-col size="12" size-md="4">
+          <div class="custom-card">
+            <h3>Anatomía Sección 101</h3>
+            <div class="button_slide slide_left" [routerLink]="['/qrgenerate']">
               <ion-icon name="scan-outline" slot="start"></ion-icon>
-              QR
-            </ion-button>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
+              Generar QR
+            </div>
+          </div>
+        </ion-col>
 
-      <ion-col size="12" size-md="4">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>Anatomia                Seccion 102</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-button expand="block" [routerLink]="['/qrgenerate']">
+        <ion-col size="12" size-md="4">
+          <div class="custom-card">
+            <h3>Anatomía Sección 102</h3>
+            <div class="button_slide slide_left" [routerLink]="['/qrgenerate']">
               <ion-icon name="scan-outline" slot="start"></ion-icon>
-              QR
-            </ion-button>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
+              Generar QR
+            </div>
+          </div>
+        </ion-col>
 
-      <ion-col size="12" size-md="4">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>Anatomia                Seccion 103</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-button expand="block" [routerLink]="['/qrgenerate']">
+        <ion-col size="12" size-md="4">
+          <div class="custom-card">
+            <h3>Anatomía Sección 103</h3>
+            <div class="button_slide slide_left" [routerLink]="['/qrgenerate']">
               <ion-icon name="scan-outline" slot="start"></ion-icon>
-              QR
-            </ion-button>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+              Generar QR
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
   <app-footer></app-footer>
 </ion-content>
