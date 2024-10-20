@@ -1,0 +1,23 @@
+.header-container {
+  background-color: #ff0000;
+  color: #ffffff;
+  padding: 15px;
+  text-align: center;
+  font-size: 14px;
+
+  .user-info {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+
+
+  a {
+    color: #9b1b30;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
