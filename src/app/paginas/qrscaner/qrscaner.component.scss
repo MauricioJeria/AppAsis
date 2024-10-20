@@ -1,7 +1,6 @@
 $color-neon: #2272FF;
 $color-negro: #1D1D1D;
 $border-radius: 8px;
-$transition-duration: 0.3s;
 
 ion-content {
   --background: $color-negro;
@@ -36,16 +35,16 @@ ion-content {
         filter: drop-shadow(0 0 8px $color-neon);
       }
 
-      .scanner-container {
-        position: absolute;
+      .scanner-element {
+        position: absolute;  // Asegúrate de que esto esté presente
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
+        z-index: 100;  // Asegúrate de que sea suficientemente alto
         display: flex;
         justify-content: center;
         align-items: center;
-        z-index: 10;
 
         video {
           width: 100%;
@@ -58,85 +57,11 @@ ion-content {
       }
     }
 
-    h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      color: $color-neon;
-      text-shadow: 0 0 10px rgba($color-neon, 0.7);
-    }
-
-    .input-slide {
-      margin-bottom: 20px;
-      position: relative;
-      border: 2px solid $color-neon;
-      padding: 10px;
-      transition: box-shadow 0.4s ease-out;
-      background-color: $color-negro;
-
-      &:focus-within {
-        box-shadow: inset 0 0 0 2px $color-neon;
-      }
-
-      ion-label {
-        color: $color-neon;
-        font-size: 14px;
-        letter-spacing: 1px;
-      }
-
-      ion-input {
-        --padding-start: 0;
-        --padding-end: 0;
-        --color: #{$color-neon};
-        --placeholder-color: rgba(34, 114, 255, 0.7);
-      }
-    }
-
     .button-container {
       display: flex;
       justify-content: center;
       gap: 10px;
       margin-top: 20px;
-
-      .button_slide {
-        color: $color-negro;
-        border: 2px solid $color-neon;
-        border-radius: 0px;
-        padding: 12px 24px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 14px;
-        letter-spacing: 1px;
-        cursor: pointer;
-        background-color: $color-neon;
-        box-shadow: inset 0 0 0 0 $color-negro, 0 0 10px rgba($color-neon, 0.5);
-        transition: all $transition-duration ease-out;
-        text-align: center;
-
-        &.slide_left:hover, &.slide_left:focus {
-          box-shadow: inset 400px 0 0 0 $color-negro;
-          color: $color-neon;
-          transform: scale(1.05);
-        }
-
-        &.disabled {
-          opacity: 0.5;
-          cursor: not-allowed;
-        }
-      }
-    }
-
-    .recuperar {
-      text-align: center;
-      margin-top: 20px;
-      cursor: pointer;
-      color: $color-neon;
-      font-size: 14px;
-      transition: opacity $transition-duration ease;
-
-      &:hover {
-        opacity: 0.7;
-      }
     }
 
     p {
@@ -146,10 +71,4 @@ ion-content {
       text-shadow: 0 0 5px rgba($color-neon, 0.5);
     }
   }
-}
-
-ion-spinner {
-  vertical-align: middle;
-  margin-left: 10px;
-  color: $color-neon;
 }
