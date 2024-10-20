@@ -3,6 +3,8 @@ import { Component,  } from '@angular/core';
 import { HeaderComponent } from 'src/app/compartidos/header/header.component';
 import { FooterComponent } from 'src/app/compartidos/footer/footer.component';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -13,8 +15,11 @@ import { CommonModule } from '@angular/common';
   imports: [IonicModule,HeaderComponent,FooterComponent, CommonModule]
 })
 export class QrscanerComponent  {
-  constructor(private alertController: AlertController) { }
+  constructor(private alertController: AlertController, private router: Router) { }
 
+  volver(){
+    this.router.navigate(['/paginaestudiante']  );
+  }
 
   async aqui(){
     const alert = await this.alertController.create({
