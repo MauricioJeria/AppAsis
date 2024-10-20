@@ -1,13 +1,14 @@
 $color-blanco: #ffffff;
-$color-granate: #9b1b30; // Granate suave
-$color-texto: #333333; // Gris oscuro
+$color-granate: #9b1b30;
+$color-texto: #333333;
 
 $border-radius: 8px;
 $transition-duration: 0.3s;
 
 ion-content {
   background-color: $color-blanco;
-  font-family: 'Roboto', sans-serif; // Asegúrate de incluir esta fuente en tu proyecto
+  font-family: 'Roboto', sans-serif;
+  height: 100%; // Aseguramos que ocupe todo el espacio
 
   .custom-card {
     background-color: $color-blanco;
@@ -16,13 +17,41 @@ ion-content {
     padding: 20px;
     text-align: center;
     margin: 20px;
+    position: relative; // Necesario para posicionar los elementos hijos
 
     .logo-container {
-      margin-bottom: 20px;
-    }
+      position: relative;
+      width: 100%;
+      height: 300px; // Define una altura específica
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden; // Asegura que los elementos no sobresalgan del contenedor
 
-    .scanner-container {
-      margin: 20px 0;
+      img {
+        max-width: 150px;
+        height: auto;
+      }
+
+      .scanner-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; // Ocupa toda la altura del contenedor padre
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10; // Asegura que esté por encima de otros elementos
+
+        video {
+          width: 100%;
+          height: 100%; // Se ajusta al tamaño del contenedor
+          object-fit: cover; // Se adapta sin distorsión
+          border-radius: $border-radius;
+          border: 2px solid red;
+        }
+      }
     }
 
     p {
