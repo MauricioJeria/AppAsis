@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { switchMap } from 'rxjs/operators';
 import { RouterModule } from '@angular/router';
+import { firstValueFrom } from 'rxjs';
 
 
 
@@ -41,7 +42,7 @@ export class IniciosesionComponent {
   async iniciarSe(usuario: string, clave: string) {
 
     if (!usuario || !clave) {
-      await this.alerta('Error', 'Por favor ingresa tu usuario y clave.');
+      await this.alert('Error', 'Por favor ingresa tu usuario y clave.');
       return;
   }
     this.isLoading = true;
@@ -49,48 +50,34 @@ export class IniciosesionComponent {
 
     try {
 
-      await this.authService.apiData(usuario, clave);
-      this.isLoading = false;
+      const inicioExitoso = await this.authService.apiData(usuario, clave);
 
+      if(inicioExitoso) {
+        const usuarioCompleto = await firstValueFrom(this.authService.usuarioCompleto$);
 
-      this.authService.isAuthenticated$.pipe(
-        switchMap(isAuthenticated => {
-          if (isAuthenticated) {
-            return this.authService.usuarioCompleto$;
-          } else {
-            throw new Error('Credenciales incorrectas');
-          }
-        })
-      ).subscribe({
-        next: (usuarioCompleto) => {
-          this.usuario = '';
-          this.clave = '';
+        this.usuario = '';
+        this.clave ='';
 
-          if (usuarioCompleto) {
-
-            if (usuarioCompleto.rol === 'docente') {
-              this.router.navigate(['/paginaprofesor']);
-            } else {
-              this.router.navigate(['/paginaestudiante']);
-            }
-          }
-        },
-        error: async (error) => {
-          console.error('Error de autenticación:', error);
-          await this.alerta('Error', error.message);
+        if(usuarioCompleto) {
+          const ruta = usuarioCompleto.rol === 'docente'
+          ? '/paginaprofesor'
+          : '/paginaestudiante';
+          await this.router.navigate([ruta]);
         }
-      });
+        }else {
+          await this.alert('Error', 'Usuario o clave incorrectos.');
+        }
+      }catch (error){
+        console.error('Error al iniciar sesión:', error);
+        await this.alert('Error', 'Hubo un problema al iniciar sesión.');
+      }finally {
+        this.isLoading = false;
+        this.isLoggingOut = false;
+        }
+      }
 
-    } catch (error) {
-      this.isLoading = false;
-      console.error('Error al iniciar sesión:', error);
-      await this.alerta('Error', 'Hubo un problema al iniciar sesión.');
-    }
-  }
 
-
-
-  async alerta(titulo: string, mensaje: string) {
+  async alert(titulo: string, mensaje: string) {
     const alert = await this.alertController.create({
       header: titulo,
       message: mensaje,
@@ -100,3 +87,4 @@ export class IniciosesionComponent {
     await alert.present();
   }
 }
+

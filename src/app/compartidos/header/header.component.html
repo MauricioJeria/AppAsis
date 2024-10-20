@@ -1,5 +1,15 @@
-<p>
+<header class="header-container">
+  <div class="user-info">
+    <span *ngIf="usuarioCompleto; else invitadoTemplate">
+      Bienvenido, {{ usuarioCompleto.nombreCompleto }}
+    </span>
+    <ng-template #invitadoTemplate>
+      Bienvenido
+    </ng-template>
+  </div>
 
-  header works!
+  <button *ngIf="usuarioCompleto" (click)="cerrarSesion()" class="logout-button">
+    Cerrar sesión
+  </button>
+</header>
 
-</p>

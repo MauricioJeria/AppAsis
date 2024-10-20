@@ -74,7 +74,7 @@ export class RecuperacionComponent implements OnInit, OnDestroy {
         this.mensaje = 'No se encontró ningún usuario con ese correo electrónico.';
       }
     } catch (error) {
-      console.error('Error al verificar el email:', error);
+
       this.mensaje = 'Hubo un error al procesar su solicitud. Por favor, inténtelo más tarde.';
     }
   }
@@ -108,7 +108,7 @@ export class RecuperacionComponent implements OnInit, OnDestroy {
         }, 2000);
       }
     } catch (error) {
-      console.error('Error al cambiar la contraseña:', error);
+
       this.mensaje = 'Hubo un error al cambiar la contraseña. Por favor, inténtelo más tarde.';
     }
   }
