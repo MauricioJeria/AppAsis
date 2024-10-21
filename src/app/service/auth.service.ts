@@ -100,7 +100,7 @@ export class AuthService {
   }
 
   public restaorarSesion() {
-    const storedUser = localStorage.getItem('user');
+    const storedUser = localStorage.getItem('usuario');
     const isAuthenticated = localStorage.getItem('isAuthenticated');
 
     if (storedUser && isAuthenticated ) {
