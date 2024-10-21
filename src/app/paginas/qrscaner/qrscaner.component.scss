@@ -33,26 +33,28 @@ ion-content {
         max-width: 150px;
         height: auto;
         filter: drop-shadow(0 0 8px $color-neon);
+        position: absolute;
+        z-index: 1;
       }
 
-      .scanner-element {
-        position: absolute;  // Asegúrate de que esto esté presente
+      .scanner-container {
+        position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: 100;  // Asegúrate de que sea suficientemente alto
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        z-index: 2;
 
-        video {
+        zxing-scanner {
           width: 100%;
           height: 100%;
-          object-fit: cover;
-          border-radius: $border-radius;
-          border: 2px solid $color-neon;
-          box-shadow: 0 0 15px rgba($color-neon, 0.5);
+
+          ::ng-deep video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: $border-radius;
+          }
         }
       }
     }
