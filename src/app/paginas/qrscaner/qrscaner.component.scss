@@ -5,7 +5,12 @@ $border-radius: 8px;
 ion-content {
   --background: $color-negro;
   font-family: "Lucida Console", Monaco, monospace;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
 
   .custom-card {
     background-color: $color-negro;
@@ -30,11 +35,14 @@ ion-content {
       margin-bottom: 20px;
 
       img {
-        max-width: 150px;
-        height: auto;
+        width: 100%;
+        height: 100%;
         filter: drop-shadow(0 0 8px $color-neon);
+        object-fit: cover;
         position: absolute;
         z-index: 1;
+        max-width: none;
+        max-height: none;
       }
 
       .scanner-container {
